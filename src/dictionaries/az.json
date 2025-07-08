@@ -1,0 +1,87 @@
+{
+  "metadata": {
+    "title": "Kreativ Marketinq Agentliyi",
+    "description": "İşləyən marketinq yaradırıq. Brendinq, SMM, veb-saytlar, PR, dizayn."
+  },
+  "header": {
+    "services": "Nə bacarırıq",
+    "process": "Necə işləyirik",
+    "portfolio": "Nə etmişik",
+    "blog": "Bloq",
+    "contact": "Əlaqə",
+    "getOffer": "Təklif alın"
+  },
+  "hero": {
+    "line1": "İşləyən marketinq",
+    "line2": "yaradırıq",
+    "animatedWords": ["brendinq.", "SMM.", "veb-saytlar.", "PR.", "dizayn."],
+    "subtitle": "Biz tam tsiklli kreativ agentliyik. İdeyaları ölçülə bilən nəticələrə çeviririk.",
+    "getOffer": "Təklif alın",
+    "learnMore": "Xidmətlər haqqında"
+  },
+  "partners": {
+    "title": "Bazar liderləri bizə etibar edir"
+  },
+  "services": {
+    "title": "Nə bacarırıq",
+    "subtitle": "İdeyadan reallaşdırmaya qədər — biznesiniz üçün tam marketinq xidmətləri spektri.",
+    "items": [
+      {
+        "title": "Strategiya və analitika",
+        "description": "Qalib strategiya yaratmaq üçün bazarın və rəqiblərin dərin təhlili."
+      },
+      { "title": "Brendinq və dizayn", "description": "Yadda qalan unikal vizual üslub yaradırıq." },
+      {
+        "title": "SMM və kontent-marketinq",
+        "description": "Sosial şəbəkələrdə auditoriyanızı cəlb edir və maraqlandırırıq."
+      },
+      { "title": "Veb-inkişaf", "description": "Sürətli, adaptiv və gözəl saytlar hazırlayırıq." },
+      { "title": "PR və kommunikasiya", "description": "Reputasiya qurur və ictimai rəyi idarə edirik." },
+      {
+        "title": "İnteqrasiyalar və PM",
+        "description": "Prosesləri avtomatlaşdırır və ən yaxşı həlləri inteqrasiya edirik."
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "Haqqımızda nə deyirlər?",
+    "items": [
+      {
+        "name": "Elnarə İvanova",
+        "role": "CEO, 'TexnoSfera'",
+        "quote": "Komanda bütün gözləntiləri aşdı. Onların kreativ yanaşması və detallara diqqəti bizə yeni səviyyəyə çatmağa kömək etdi."
+      },
+      {
+        "name": "Əli Petrov",
+        "role": "Marketoloq, 'İnnovasiyalar'",
+        "quote": "Hər mərhələdə peşəkarlıq. Nəticələr özləri danışır — yarım il ərzində brend tanınmasının 50% artması!"
+      },
+      {
+        "name": "Məryəm Sidarova",
+        "role": "Təsisçi, 'Startap'",
+        "quote": "İşlədiyim ən yaxşı agentlik. Onlar həqiqətən müştərinin ehtiyaclarını dinləyir və anlayırlar."
+      }
+    ]
+  },
+  "blog": {
+    "title": "Bizim bloq",
+    "subtitle": "Marketinq dünyasından təcrübə, insaytlar və faydalı materiallarla bölüşürük.",
+    "posts": [
+      { "title": "2025-ci ildə rəqəmsal marketinqin 5 trendi", "category": "Marketinq" },
+      { "title": "Seviləcək bir brend necə yaradılır", "category": "Brendinq" },
+      { "title": "Biznesinizə niyə güclü PR lazımdır", "category": "PR" }
+    ],
+    "readMore": "Daha çox oxu"
+  },
+  "contact": {
+    "title": "Layihəyə başlamağa hazırsınız?",
+    "subtitle": "Bizə tapşırığınız haqqında danışın, biz isə ən yaxşı həlli tapaq. Formu doldurun və ya bizimlə istənilən rahat üsulla əlaqə saxlayın.",
+    "namePlaceholder": "Adınız",
+    "emailPlaceholder": "Email",
+    "messagePlaceholder": "Layihəniz haqqında danışın",
+    "submitButton": "Müraciət göndər"
+  },
+  "footer": {
+    "copyright": "Bütün hüquqlar qorunur."
+  }
+}
