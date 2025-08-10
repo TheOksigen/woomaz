@@ -1,5 +1,4 @@
 import Image from "next/image"
-import CreativeBackground from "./creative-background"
 
 interface PartnersProps {
   dictionary: any
@@ -17,7 +16,6 @@ export default function Partners({ dictionary }: PartnersProps) {
   ]
 
   return (
-    <CreativeBackground pattern="wave" intensity={0.4}>
       <section id="partners" className="py-12 relative">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <h3 className="text-center text-sm font-semibold text-muted-foreground tracking-wider uppercase">
@@ -39,6 +37,5 @@ export default function Partners({ dictionary }: PartnersProps) {
           </div>
         </div>
       </section>
-    </CreativeBackground>
   )
 }

@@ -3,7 +3,6 @@
 import Image from "next/image"
 import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
-import CreativeBackground from "./creative-background"
 
 interface BlogProps {
   dictionary: any
@@ -36,7 +35,6 @@ export default function Blog({ dictionary }: BlogProps) {
   }
 
   return (
-    <CreativeBackground pattern="floating" intensity={0.7}>
       <section id="blog" className="py-20 md:py-28 relative">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -82,6 +80,5 @@ export default function Blog({ dictionary }: BlogProps) {
           </motion.div>
         </div>
       </section>
-    </CreativeBackground>
   )
 }

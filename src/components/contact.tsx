@@ -5,7 +5,6 @@ import { Send } from "lucide-react"
 import { Button } from "@/src/components/ui/button"
 import { Input } from "@/src/components/ui/input"
 import { Textarea } from "@/src/components/ui/textarea"
-import CreativeBackground from "./creative-background"
 
 interface ContactProps {
   dictionary: any
@@ -32,7 +31,6 @@ export default function Contact({ dictionary }: ContactProps) {
   }
 
   return (
-    <CreativeBackground pattern="particles" intensity={0.9}>
       <section id="contact" className="py-20 md:py-28 relative bg-primary/90 text-primary-foreground">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -82,6 +80,5 @@ export default function Contact({ dictionary }: ContactProps) {
           </motion.div>
         </div>
       </section>
-    </CreativeBackground>
   )
 }

@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion"
 import { Avatar, AvatarFallback, AvatarImage } from "@/src/components/ui/avatar"
-import CreativeBackground from "./creative-background"
 
 interface TestimonialsProps {
   dictionary: any
@@ -29,7 +28,6 @@ export default function Testimonials({ dictionary }: TestimonialsProps) {
   }
 
   return (
-    <CreativeBackground pattern="particles" intensity={0.8}>
       <section id="testimonials" className="py-20 md:py-28 relative">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -75,6 +73,5 @@ export default function Testimonials({ dictionary }: TestimonialsProps) {
           </motion.div>
         </div>
       </section>
-    </CreativeBackground>
   )
 }

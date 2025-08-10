@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion"
 import { Search, Palette, Megaphone, PenTool, BrainCircuit, Users } from "lucide-react"
-import CreativeBackground from "./creative-background"
 
 interface ServicesProps {
   dictionary: any
@@ -38,7 +37,6 @@ export default function Services({ dictionary }: ServicesProps) {
   }
 
   return (
-    <CreativeBackground pattern="grid" intensity={0.6}>
       <section id="services" className="py-20 md:py-28 relative">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -69,6 +67,5 @@ export default function Services({ dictionary }: ServicesProps) {
           </motion.div>
         </div>
       </section>
-    </CreativeBackground>
   )
 }
