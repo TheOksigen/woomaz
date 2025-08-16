@@ -1,13 +1,13 @@
 import type { Metadata } from "next"
 import type { ReactNode } from "react"
-import { Inter, Poppins } from "next/font/google"
+import { Poppins } from "next/font/google"
 import "../globals.css"
 import { getDictionary } from "@/src/app/get-dictionary"
 import { i18n, type Locale } from "@/src/app/i18n-config"
 
 const inter = Poppins({ 
   subsets: ["latin"], 
-  weight: ["400"] // Add a default weight to satisfy type requirements
+  weight: ["400"]
 })
 
 export async function generateStaticParams() {
