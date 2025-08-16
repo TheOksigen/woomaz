@@ -14,32 +14,64 @@
   "hero": {
     "line1": "İşləyən marketinq",
     "line2": "yaradırıq",
-    "animatedWords": ["brendinq.", "SMM.", "veb-saytlar.", "PR.", "dizayn."],
+    "animatedWords": [
+      "brendinq.",
+      "SMM.",
+      "veb-saytlar.",
+      "PR.",
+      "dizayn."
+    ],
     "subtitle": "Biz tam tsiklli kreativ agentliyik. İdeyaları ölçülə bilən nəticələrə çeviririk.",
     "getOffer": "Təklif alın",
     "learnMore": "Xidmətlər haqqında"
   },
   "partners": {
-    "title": "Bazar liderləri bizə etibar edir"
+    "title": "Bazar liderləri bizə etibar edir",
+    "statistics": {
+      "experience": "İllik təcrübə",
+      "partners": "Partnyor",
+      "projects": "Layihə"
+    }
   },
   "services": {
     "title": "Nə bacarırıq",
     "subtitle": "İdeyadan reallaşdırmaya qədər — biznesiniz üçün tam marketinq xidmətləri spektri.",
     "items": [
       {
-        "title": "Strategiya və analitika",
-        "description": "Qalib strategiya yaratmaq üçün bazarın və rəqiblərin dərin təhlili."
+        "title": "Rəqəmsal Marketinq",
+        "description": "Onlayn mühitdə brendinizi inkişaf etdirir və satışları artırırıq."
       },
-      { "title": "Brendinq və dizayn", "description": "Yadda qalan unikal vizual üslub yaradırıq." },
       {
-        "title": "SMM və kontent-marketinq",
-        "description": "Sosial şəbəkələrdə auditoriyanızı cəlb edir və maraqlandırırıq."
+        "title": "SMM",
+        "description": "Sosial şəbəkələrdə auditoriyanı cəlb edən effektiv strategiyalar qururuq."
       },
-      { "title": "Veb-inkişaf", "description": "Sürətli, adaptiv və gözəl saytlar hazırlayırıq." },
-      { "title": "PR və kommunikasiya", "description": "Reputasiya qurur və ictimai rəyi idarə edirik." },
       {
-        "title": "İnteqrasiyalar və PM",
-        "description": "Prosesləri avtomatlaşdırır və ən yaxşı həlləri inteqrasiya edirik."
+        "title": "Bazar Araşdırması",
+        "description": "Rəqiblərin təhlili və bazar trendləri əsasında düzgün strategiya hazırlayırıq."
+      },
+      {
+        "title": "Brendinq",
+        "description": "Brendiniz üçün unikal kimlik və konsept yaradırıq."
+      },
+      {
+        "title": "Dizayn",
+        "description": "Fərqli və yadda qalan vizual həllər hazırlayırıq."
+      },
+      {
+        "title": "Foto/Video Çəkiliş",
+        "description": "Peşəkar vizual kontent ilə brendinizi daha təsirli təqdim edirik."
+      },
+      {
+        "title": "Saytların Hazırlanması",
+        "description": "Müasir, sürətli və adaptiv saytlar dizayn və proqramlaşdırırıq."
+      },
+      {
+        "title": "Indoor Reklam",
+        "description": "Qapalı məkanlarda effektiv vizual reklam həlləri təklif edirik."
+      },
+      {
+        "title": "Outdoor Reklam",
+        "description": "Açıq məkanlarda diqqət çəkən reklam kampaniyaları hazırlayırıq."
       }
     ]
   },
@@ -67,9 +99,18 @@
     "title": "Bizim bloq",
     "subtitle": "Marketinq dünyasından təcrübə, insaytlar və faydalı materiallarla bölüşürük.",
     "posts": [
-      { "title": "2025-ci ildə rəqəmsal marketinqin 5 trendi", "category": "Marketinq" },
-      { "title": "Seviləcək bir brend necə yaradılır", "category": "Brendinq" },
-      { "title": "Biznesinizə niyə güclü PR lazımdır", "category": "PR" }
+      {
+        "title": "2025-ci ildə rəqəmsal marketinqin 5 trendi",
+        "category": "Marketinq"
+      },
+      {
+        "title": "Seviləcək bir brend necə yaradılır",
+        "category": "Brendinq"
+      },
+      {
+        "title": "Biznesinizə niyə güclü PR lazımdır",
+        "category": "PR"
+      }
     ],
     "readMore": "Daha çox oxu"
   },

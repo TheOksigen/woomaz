@@ -6,12 +6,20 @@ const nextConfig: NextConfig = {
   },
   images: {
     dangerouslyAllowSVG: true,
-    remotePatterns: [{
-      protocol: "https",
-      hostname: "placehold.co",
-      port: "",
-      pathname: "/**"
-    }]
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "placehold.co",
+        port: "",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "place.davidhtml.xyz",
+        port: "",
+        pathname: "/**",
+      },
+    ],
   }
 };
 

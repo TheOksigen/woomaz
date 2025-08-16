@@ -56,7 +56,8 @@ export default function Header({ dictionary, lang, logoSrc }: HeaderProps) {
         lang={lang}
         logoSrc={logoSrc}
       />
-      <header 
+    
+      <header
         className="sticky top-0 z-30 transition-all duration-300 ease-out rounded-b-[24px]"
         style={{
           backdropFilter: `blur(${20 + blurIntensity * 40}px)`,
@@ -99,6 +100,7 @@ export default function Header({ dictionary, lang, logoSrc }: HeaderProps) {
             opacity: 0.3 + refractionIntensity * 0.7,
           }}
         />
+
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex items-center justify-between h-20">
