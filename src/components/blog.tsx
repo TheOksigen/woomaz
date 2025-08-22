@@ -1,9 +1,14 @@
-"use client";
-
+"use client"
 import React from "react";
 import { Carousel, Card } from "@/src/components/ui/apple-cards-carousel";
+// import { getPayload } from "payload";
+// import config from "@payload-config"
 
-export default function AppleCardsCarouselDemo() {
+export default async function AppleCardsCarouselDemo() {
+  // const payload = await getPayload({ config })
+  // const data = await payload.find({ collection: "blog" })
+
+  console.log(data)
   const cards = data.map((card, index) => (
     <Card key={card.src} card={card} index={index} layout={true} />
   ));
@@ -80,3 +85,5 @@ const data = [
     content: <DummyContent marketingText="Track key metrics and analyze data to improve your marketing strategies." />,
   },
 ];
+
+

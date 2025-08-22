@@ -7,7 +7,7 @@ import { Menu } from "lucide-react"
 import { Button } from "@/src/components/ui/button"
 import LocaleSwitcher from "@/src/components/locale-switcher"
 import { MobileMenu } from "@/src/components/mobile-menu"
-import type { Locale } from "@/src/app/i18n-config"
+import type { Locale } from "@/src/app/(frontend)/i18n-config"
 
 interface NavLink {
   href: string

@@ -1,5 +1,5 @@
-import type { Locale } from "@/src/app/i18n-config"
-import { getDictionary } from "@/src/app/get-dictionary"
+import type { Locale } from "@/src/app/(frontend)/i18n-config"
+import { getDictionary } from "@/src/app/(frontend)/get-dictionary"
 import PageContent from "./page-content"
 
 // This is now a pure Server Component.

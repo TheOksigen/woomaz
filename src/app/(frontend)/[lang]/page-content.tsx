@@ -3,9 +3,10 @@
 import { useState, useEffect } from "react"
 import { Header, Hero, Partners, Services, Testimonials, Blog, Contact, Footer } from "@/src/components"
 
-import type { Locale } from "@/src/app/i18n-config"
+import type { Locale } from "@/src/app/(frontend)/i18n-config"
 import Portfolio from "@/src/components/portfolio"
 import TeamSection from "@/src/components/team-section"
+import Pox from "@/src/components/pox"
 
 const PageContent = ({
   dictionary,
@@ -39,6 +40,7 @@ const PageContent = ({
         <Testimonials dictionary={dictionary} />
         <TeamSection />
         <Blog dictionary={dictionary} />
+        <Pox />
         <Contact dictionary={dictionary} />
       </main>
 

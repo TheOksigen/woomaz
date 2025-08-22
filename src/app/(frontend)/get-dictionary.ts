@@ -3,8 +3,8 @@ import type { Locale } from "./i18n-config"
 
 // A mapping of locales to their dictionary import functions.
 const dictionaries = {
-  az: () => import("../dictionaries/az.json").then((module) => module.default),
-  ru: () => import("../dictionaries/ru.json").then((module) => module.default),
+  az: () => import("../../dictionaries/az.json").then((module) => module.default),
+  ru: () => import("../../dictionaries/ru.json").then((module) => module.default),
 }
 
 /**

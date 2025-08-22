@@ -2,8 +2,8 @@ import type { Metadata } from "next"
 import type { ReactNode } from "react"
 import { Poppins } from "next/font/google"
 import "../globals.css"
-import { getDictionary } from "@/src/app/get-dictionary"
-import { i18n, type Locale } from "@/src/app/i18n-config"
+import { getDictionary } from "@/src/app/(frontend)/get-dictionary"
+import { i18n, type Locale } from "@/src/app/(frontend)/i18n-config"
 
 const inter = Poppins({ 
   subsets: ["latin"], 
