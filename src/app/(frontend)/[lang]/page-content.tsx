@@ -33,15 +33,15 @@ const PageContent = ({
       <Header dictionary={dictionary} lang={lang} logoSrc={logoSrc} />
 
       <main className="relative z-10">
-        <Hero dictionary={dictionary} />
-        <Partners dictionary={dictionary} />
-        <Portfolio dictionary={dictionary}/>
-        <Services dictionary={dictionary} />
-        <Testimonials dictionary={dictionary} />
-        <TeamSection />
+        {/*<Hero dictionary={dictionary} />*/}
+        {/*<Partners dictionary={dictionary} />*/}
+        {/*<Portfolio dictionary={dictionary}/>*/}
+        {/*<Services dictionary={dictionary} />*/}
+        {/*<Testimonials dictionary={dictionary} />*/}
+        {/*<TeamSection />*/}
         <Blog dictionary={dictionary} />
         {/* <Pox /> */}
-        <Contact dictionary={dictionary} />
+        {/*<Contact dictionary={dictionary} />*/}
       </main>
 
       <Footer dictionary={dictionary} />

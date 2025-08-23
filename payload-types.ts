@@ -141,7 +141,7 @@ export interface Media {
 export interface Blog {
   id: string;
   title: string;
-  content: {
+  content?: {
     root: {
       type: string;
       children: {
@@ -155,7 +155,7 @@ export interface Blog {
       version: number;
     };
     [k: string]: unknown;
-  };
+  } | null;
   featuredImage: string | Media;
   author: string | User;
   tags?:
