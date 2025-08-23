@@ -1,68 +1,20 @@
-import {Block, CollectionConfig, RichTextField} from "payload";
+import { CollectionConfig } from "payload";
 import {
     AlignFeature, BlockquoteFeature,
-    BlocksFeature, BoldFeature, ChecklistFeature,
+    BoldFeature, ChecklistFeature,
     convertLexicalToMarkdown,
+    convertMarkdownToLexical,
     editorConfigFactory,
-    FixedToolbarFeature, HeadingFeature, HorizontalRuleFeature, IndentFeature, InlineCodeFeature,
-    InlineToolbarFeature, ItalicFeature,
-    lexicalEditor, LinkFeature,
+    FixedToolbarFeature, HeadingFeature, 
+    HorizontalRuleFeature, IndentFeature, 
+    InlineCodeFeature, InlineToolbarFeature, 
+    ItalicFeature, lexicalEditor, LinkFeature,
     OrderedListFeature, ParagraphFeature,
-    RelationshipFeature, StrikethroughFeature, SubscriptFeature, SuperscriptFeature, UnderlineFeature,
-    UnorderedListFeature, UploadFeature,
+    RelationshipFeature, StrikethroughFeature, 
+    SubscriptFeature, SuperscriptFeature, 
+    UnderlineFeature, UnorderedListFeature, 
+    UploadFeature,
 } from "@payloadcms/richtext-lexical";
-import {SerializedEditorState} from "@payloadcms/richtext-lexical/lexical";
-
-const BannerBlock: Block = {
-    slug: 'Banner',
-    fields: [
-        {
-            name: 'type',
-            type: 'select',
-            defaultValue: 'info',
-            options: [
-                {label: 'Info', value: 'info'},
-                {label: 'Warning', value: 'warning'},
-                {label: 'Error', value: 'error'},
-            ],
-        },
-        {
-            name: 'content',
-            type: 'richText',
-            editor: lexicalEditor({
-                features: ({defaultFeatures, rootFeatures}) => [
-                    ...defaultFeatures,
-                ]
-            }),
-        },
-    ],
-    jsx: {
-        /**
-         * Convert from Lexical -> MDX:
-         * <Banner type="..." >child content</Banner>
-         */
-        export: ({fields, lexicalToMarkdown}) => {
-            const props: any = {}
-            if (fields.type) {
-                props.type = fields.type
-            }
-
-            return {
-                children: lexicalToMarkdown({editorState: fields.content}),
-                props,
-            }
-        },
-        /**
-         * Convert from MDX -> Lexical:
-         */
-        import: ({children, markdownToLexical, props}) => {
-            return {
-                type: props?.type,
-                content: markdownToLexical({markdown: children}),
-            }
-        },
-    },
-}
 
 export const Blog: CollectionConfig = {
     slug: "blog",
@@ -80,53 +32,115 @@ export const Blog: CollectionConfig = {
             required: true,
             localized: true,
         },
-
+        {
+            name: 'contentMode',
+            type: 'radio',
+            label: 'Content Mode',
+            defaultValue: 'richtext',
+            options: [
+                { label: 'Rich Text Editor', value: 'richtext' },
+                { label: 'Markdown Input', value: 'markdown' },
+            ],
+            admin: {
+                layout: 'horizontal',
+                description: 'Choose how you want to input your content',
+            },
+        },
         {
             name: 'content',
             type: 'richText',
-            // required: true,
+            required: true,
             localized: true,
+            admin: {
+                condition: (data) => data?.contentMode === 'richtext',
+            },
             editor: lexicalEditor({
-                features: ({defaultFeatures}) => [
+                features: ({ defaultFeatures }) => [
                     ...defaultFeatures,
-                    BoldFeature(), ItalicFeature(), UnderlineFeature(), StrikethroughFeature(), SubscriptFeature(), SuperscriptFeature(), InlineCodeFeature(), ParagraphFeature(), HeadingFeature(), AlignFeature(), IndentFeature(), UnorderedListFeature(), OrderedListFeature(), ChecklistFeature(), LinkFeature(), RelationshipFeature(), BlockquoteFeature(), UploadFeature(), HorizontalRuleFeature(), InlineToolbarFeature(),
+                    BoldFeature(), 
+                    ItalicFeature(), 
+                    UnderlineFeature(), 
+                    StrikethroughFeature(), 
+                    SubscriptFeature(), 
+                    SuperscriptFeature(), 
+                    InlineCodeFeature(), 
+                    ParagraphFeature(), 
+                    HeadingFeature(), 
+                    AlignFeature(), 
+                    IndentFeature(), 
+                    UnorderedListFeature(), 
+                    OrderedListFeature(), 
+                    ChecklistFeature(), 
+                    LinkFeature(), 
+                    RelationshipFeature(), 
+                    BlockquoteFeature(), 
+                    UploadFeature(), 
+                    HorizontalRuleFeature(), 
+                    InlineToolbarFeature(),
                     FixedToolbarFeature(),
-                    BlocksFeature({
-                        blocks: [BannerBlock],
-                    }),
                 ]
             }),
-            // hooks: {
-            //     afterRead: [
-            //         ({ siblingData, siblingFields }) => {
-            //             const data: SerializedEditorState =
-            //                 siblingData['content']
-            //
-            //             if (!data) {
-            //                 return ''
-            //             }
-            //
-            //             const markdown = convertLexicalToMarkdown({
-            //                 data,
-            //                 editorConfig: editorConfigFactory.fromField({
-            //                     field: siblingFields.find(
-            //                         (field) =>
-            //                             'name' in field && field.name === 'content',
-            //                     ) as RichTextField,
-            //                 }),
-            //             })
-            //
-            //             return markdown
-            //         },
-            //     ],
-            //     beforeChange: [
-            //         ({ siblingData }) => {
-            //             // Ensure that the markdown field is not saved in the database
-            //             delete siblingData['markdown']
-            //             return null
-            //         },
-            //     ],
-            // },
+        },
+        {
+            name: 'markdownContent',
+            type: 'textarea',
+            label: 'Markdown Content',
+            admin: {
+                condition: (data) => data?.contentMode === 'markdown',
+                description: 'Write or paste your markdown content here',
+                rows: 20,
+            },
+            hooks: {
+                beforeChange: [
+                    async ({ value, siblingData, req }) => {
+                        if (value && value.trim() && siblingData?.contentMode === 'markdown') {
+                            try {
+                                const editorConfig = await editorConfigFactory.default({
+                                    config: req.payload.config,
+                                });
+
+                                const lexicalJSON = convertMarkdownToLexical({
+                                    editorConfig,
+                                    markdown: value,
+                                });
+
+                                // Rich text content field-ini yeniləyirik
+                                siblingData.content = lexicalJSON;
+                                
+                                console.log('Markdown converted to rich text successfully');
+                            } catch (error) {
+                                console.error('Markdown to rich text conversion error:', error);
+                            }
+                        }
+                        
+                        return value; // Markdown content-i də saxlayırıq
+                    },
+                ],
+                afterRead: [
+                    async ({ siblingData, req }) => {
+                        // Əgər rich text content varsa və markdown mode seçilibsə, markdown çıxart
+                        if (siblingData?.content && siblingData?.contentMode === 'markdown') {
+                            try {
+                                const editorConfig = await editorConfigFactory.default({
+                                    config: req.payload.config,
+                                });
+
+                                const markdown = convertLexicalToMarkdown({
+                                    data: siblingData.content,
+                                    editorConfig,
+                                });
+                                
+                                return markdown;
+                            } catch (error) {
+                                console.error('Rich text to markdown conversion error:', error);
+                                return '';
+                            }
+                        }
+                        
+                        return '';
+                    },
+                ],
+            },
         },
         {
             name: 'featuredImage',
@@ -145,16 +159,16 @@ export const Blog: CollectionConfig = {
             type: 'select',
             hasMany: true,
             options: [
-                {label: 'Frontend Development', value: 'frontend-development'},
-                {label: 'Backend Development', value: 'backend-development'},
-                {label: 'Mobile Development', value: 'mobile-development'},
-                {label: 'UI/UX Design', value: 'ui-ux-design'},
-                {label: 'Web Development', value: 'web-development'},
-                {label: 'Digital Marketing', value: 'digital-marketing'},
-                {label: 'E-commerce', value: 'e-commerce'},
-                {label: 'Technology', value: 'technology'},
-                {label: 'Business', value: 'business'},
-                {label: 'Innovation', value: 'innovation'},
+                { label: 'Frontend Development', value: 'frontend-development' },
+                { label: 'Backend Development', value: 'backend-development' },
+                { label: 'Mobile Development', value: 'mobile-development' },
+                { label: 'UI/UX Design', value: 'ui-ux-design' },
+                { label: 'Web Development', value: 'web-development' },
+                { label: 'Digital Marketing', value: 'digital-marketing' },
+                { label: 'E-commerce', value: 'e-commerce' },
+                { label: 'Technology', value: 'technology' },
+                { label: 'Business', value: 'business' },
+                { label: 'Innovation', value: 'innovation' },
             ],
         },
         {
@@ -163,9 +177,9 @@ export const Blog: CollectionConfig = {
             required: true,
             defaultValue: 'draft',
             options: [
-                {label: 'Draft', value: 'draft'},
-                {label: 'Published', value: 'published'},
-                {label: 'Archived', value: 'archived'},
+                { label: 'Draft', value: 'draft' },
+                { label: 'Published', value: 'published' },
+                { label: 'Archived', value: 'archived' },
             ],
         },
         {
@@ -177,7 +191,6 @@ export const Blog: CollectionConfig = {
                 },
             },
         },
-
     ],
     timestamps: true,
 }

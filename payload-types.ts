@@ -141,6 +141,10 @@ export interface Media {
 export interface Blog {
   id: string;
   title: string;
+  /**
+   * Choose how you want to input your content
+   */
+  contentMode?: ('richtext' | 'markdown') | null;
   content?: {
     root: {
       type: string;
@@ -156,6 +160,10 @@ export interface Blog {
     };
     [k: string]: unknown;
   } | null;
+  /**
+   * Write or paste your markdown content here
+   */
+  markdownContent?: string | null;
   featuredImage: string | Media;
   author: string | User;
   tags?:
@@ -290,7 +298,9 @@ export interface MediaSelect<T extends boolean = true> {
  */
 export interface BlogSelect<T extends boolean = true> {
   title?: T;
+  contentMode?: T;
   content?: T;
+  markdownContent?: T;
   featuredImage?: T;
   author?: T;
   tags?: T;
