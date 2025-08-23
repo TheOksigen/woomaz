@@ -140,8 +140,8 @@ export interface Media {
  */
 export interface Blog {
   id: string;
-  name?: string | null;
-  description?: {
+  title: string;
+  content: {
     root: {
       type: string;
       children: {
@@ -155,7 +155,29 @@ export interface Blog {
       version: number;
     };
     [k: string]: unknown;
-  } | null;
+  };
+  featuredImage: string | Media;
+  author: string | User;
+  tags?:
+    | (
+        | 'frontend-development'
+        | 'backend-development'
+        | 'mobile-development'
+        | 'ui-ux-design'
+        | 'web-development'
+        | 'digital-marketing'
+        | 'e-commerce'
+        | 'technology'
+        | 'business'
+        | 'innovation'
+      )[]
+    | null;
+  status: 'draft' | 'published' | 'archived';
+  publishedAt?: string | null;
+  meta?: {
+    title?: string | null;
+    description?: string | null;
+  };
   updatedAt: string;
   createdAt: string;
 }
@@ -267,8 +289,19 @@ export interface MediaSelect<T extends boolean = true> {
  * via the `definition` "blog_select".
  */
 export interface BlogSelect<T extends boolean = true> {
-  name?: T;
-  description?: T;
+  title?: T;
+  content?: T;
+  featuredImage?: T;
+  author?: T;
+  tags?: T;
+  status?: T;
+  publishedAt?: T;
+  meta?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+      };
   updatedAt?: T;
   createdAt?: T;
 }

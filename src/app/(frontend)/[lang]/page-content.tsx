@@ -40,7 +40,7 @@ const PageContent = ({
         <Testimonials dictionary={dictionary} />
         <TeamSection />
         <Blog dictionary={dictionary} />
-        <Pox />
+        {/* <Pox /> */}
         <Contact dictionary={dictionary} />
       </main>
 
