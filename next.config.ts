@@ -20,7 +20,16 @@ const nextConfig: NextConfig = {
         pathname: "/**",
       },
     ],
-  }
+  },
+  async redirects() {
+    return [
+      {
+        source: "/",
+        destination: "/az",
+        permanent: true
+      }
+    ]
+  },
 };
 
 export default nextConfig;
