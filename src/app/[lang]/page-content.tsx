@@ -6,6 +6,7 @@ import { Header, Hero, Partners, Services, Testimonials, Blog, Contact, Footer }
 import type { Locale } from "@/src/app/i18n-config"
 import Portfolio from "@/src/components/portfolio"
 import TeamSection from "@/src/components/team-section"
+import Hero2 from "@/src/components/ui/hero2"
 
 const PageContent = ({
   dictionary,
@@ -33,8 +34,9 @@ const PageContent = ({
 
       <main className="relative z-10">
         <Hero dictionary={dictionary} />
+        <Hero2 dictionary={dictionary} />
         <Partners dictionary={dictionary} />
-        <Portfolio dictionary={dictionary}/>
+        <Portfolio dictionary={dictionary} />
         <Services dictionary={dictionary} />
         <Testimonials dictionary={dictionary} />
         <TeamSection />
