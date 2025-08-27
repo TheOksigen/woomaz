@@ -34,7 +34,6 @@ export default function Header({ dictionary, lang, logoSrc }: HeaderProps) {
     { href: "#contact", label: dictionary.header.contact, icon: null },
   ]
 
-  // Static refined glass backdrop; dynamic values removed
 
   return (
     <>
@@ -47,33 +46,33 @@ export default function Header({ dictionary, lang, logoSrc }: HeaderProps) {
         logoSrc={logoSrc}
       />
       <GlassSurface
-      borderRadius={0}
+        borderRadius={0}
         displace={0.5}
         distortionScale={-180}
         redOffset={0}
         greenOffset={10}
         blueOffset={20}
         brightness={50}
-        opacity={0.93}
+        opacity={1}
         backgroundOpacity={0}
-        saturation={1}
-        borderWidth={0.07}
+        saturation={0}
+        borderWidth={0}
         blur={11}
         width={"100%"}
         mixBlendMode="screen"
-        className="w-full sticky top-0 z-30">
+        className="w-full sticky top-0 z-30 bg-white">
         <header className="w-full rounded-b-[24px]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="flex items-center justify-between h-20">
               <Link href={`/${lang}`} className="flex items-center">
-                <Image src={logoSrc || "/placeholder.svg"} alt="Агентство Лого" width={140} height={40} />
+                <Image src={logoSrc || "/placeholder.svg"} alt="Агентство Лого" width={180} height={40} />
               </Link>
               <nav className="hidden md:flex items-center space-x-8">
                 {navLinks.map((link) => (
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="text-sm text-black font-medium hover:text-primary transition-all duration-300 hover:scale-105 relative group"
+                    className="md:text-xl  text-black hover:text-primary transition-all duration-300 hover:scale-105 hover:font-bold relative group"
                   >
                     {link.label}
                     <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary/60 to-primary transition-all duration-300 group-hover:w-full"></span>
