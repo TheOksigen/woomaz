@@ -153,14 +153,14 @@ export const Header = ({ dictionary }: { dictionary: any }) => {
 
       <div className="mt-8 flex flex-wrap justify-center gap-4">
         <a
-          href="#get-offer"
-          className="px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-lg font-semibold"
+          // href="#get-offer"
+          className="px-6 py-3 z-50 !bg-blue-600 hover:bg-blue-500 text-white rounded-lg font-semibold"
         >
           {dictionary.hero.getOffer}
         </a>
         <a
-          href="#learn-more"
-          className="px-6 py-3 bg-gray-200 hover:bg-gray-300 text-gray-900 rounded-lg font-semibold"
+          // href="#learn-more"
+          className="px-6 z-50 py-3 !bg-gray-200 hover:bg-gray-300 text-gray-900 rounded-lg font-semibold"
         >
           {dictionary.hero.learnMore}
         </a>
